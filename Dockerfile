@@ -4,7 +4,7 @@ FROM typesense/typesense:0.25.2
 # Environment defaults
 ENV TYPESENSE_DATA_DIR=/data \
     TYPESENSE_ENABLE_CORS=true \
-    TYPESENSE_NUM_THREADS=8
+    TYPESENSE_NUM_THREADS=4
 
 # Copy entrypoint
 RUN mkdir -p /data && chown -R 1000:1000 /data
