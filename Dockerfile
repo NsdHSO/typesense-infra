@@ -4,7 +4,7 @@
 # - Wrapper entrypoint passes API key and opts from env
 
 ARG TYPESENSE_VERSION=0.25.2
-FROM typesense/typesense:${TYPESENSE_VERSION}
+FROM typesense/typesense:0.25.2
 
 LABEL org.opencontainers.image.title="typesense-infra" \
       org.opencontainers.image.description="Typesense server with wrapper entrypoint for platforms like Railway" \

@@ -1,16 +1,28 @@
+x-strapi-base: &strapi_base
+  restart: unless-stopped
+  working_dir: /srv/app
+
 services:
+
   typesense:
     image: typesense/typesense:0.25.2
     container_name: typesense
-    restart: unless-stopped
     ports:
       - "8108:8108"
     environment:
-      TYPESENSE_API_KEY: "${TYPESENSE_API_KEY:-dev_typesense_key}"
-      TYPESENSE_DATA_DIR: "/data"
+      TYPESENSE_API_KEY: ${TYPESENSE_API_KEY:-dev_typesense_key}
+      TYPESENSE_DATA_DIR: /data
       TYPESENSE_ENABLE_CORS: "true"
     volumes:
       - typesense_data:/data
+    profiles: ["fat", "uat"]
 
 volumes:
+  strapi_node_modules:
+  strapi_cache_fat:
+  strapi_tmp_fat:
+  strapi_cache_uat:
+  strapi_tmp_uat:
+  strapi_cache_prod:
+  strapi_tmp_prod:
   typesense_data:
