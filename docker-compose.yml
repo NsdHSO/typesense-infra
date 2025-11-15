@@ -18,11 +18,4 @@ services:
     profiles: ["fat", "uat"]
 
 volumes:
-  strapi_node_modules:
-  strapi_cache_fat:
-  strapi_tmp_fat:
-  strapi_cache_uat:
-  strapi_tmp_uat:
-  strapi_cache_prod:
-  strapi_tmp_prod:
   typesense_data:
