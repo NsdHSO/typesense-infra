@@ -7,6 +7,7 @@ ENV TYPESENSE_DATA_DIR=/data \
     TYPESENSE_NUM_THREADS=8
 
 # Copy entrypoint
+RUN mkdir -p /data && chown -R 1000:1000 /data
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
